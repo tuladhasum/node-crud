@@ -8,7 +8,8 @@ const eventSchema = new Schema({
     type: String,
     unique: true
   },
-  description: String
+  description: String,
+  coordinator: String
 });
 
 // middleware -----

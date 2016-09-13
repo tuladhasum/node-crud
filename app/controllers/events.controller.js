@@ -54,10 +54,10 @@ function showSingle(req, res) {
 function seedEvents(req, res) {
   // create some events
   const events = [
-    { name: 'Basketball', description: 'Throwing into a basket.' },
-    { name: 'Swimming', description: 'Michael Phelps is the fast fish.' },
-    { name: 'Weightlifting', description: 'Lifting heavy things up' },
-    { name: 'Ping Pong', description: 'Super fast paddles' }
+    { name: 'Basketball', description: 'Throwing into a basket.' , coordinator: 'John Doe'},
+    { name: 'Swimming', description: 'Michael Phelps is the fast fish.' , coordinator: 'John Doe'},
+    { name: 'Weightlifting', description: 'Lifting heavy things up' , coordinator: 'John Doe'},
+    { name: 'Ping Pong', description: 'Super fast paddles', coordinator: 'John Doe' }
   ];
 
   // use the Event model to insert/save
@@ -88,6 +88,7 @@ function processCreate(req, res) {
   // validate information
   req.checkBody('name', 'Name is required.').notEmpty();
   req.checkBody('description', 'Description is required.').notEmpty();
+  req.checkBody('coordinator', 'coordinator is required.').notEmpty();
 
   // if there are errors, redirect and save errors to flash
   const errors = req.validationErrors();
@@ -99,7 +100,8 @@ function processCreate(req, res) {
   // create a new event
   const event = new Event({
     name: req.body.name,
-    description: req.body.description
+    description: req.body.description,
+    coordinator: req.body.coordinator
   });
 
   // save event
@@ -134,6 +136,7 @@ function processEdit(req, res) {
   // validate information
   req.checkBody('name', 'Name is required.').notEmpty();
   req.checkBody('description', 'Description is required.').notEmpty();
+  req.checkBody('coordinator', 'coordinator is required.').notEmpty();
 
   // if there are errors, redirect and save errors to flash
   const errors = req.validationErrors();
@@ -147,6 +150,7 @@ function processEdit(req, res) {
     // updating that event
     event.name        = req.body.name;
     event.description = req.body.description;
+    event.coordinator = req.body.coordinator;
 
     event.save((err) => {
       if (err)

@@ -4,6 +4,7 @@ We'll cover the concepts necessary to handle creating a Node application that ha
 
 These are the foundation of many types of applications.
 
+- Tutorial source [link](https://school.scotch.io/create-a-crud-app-with-node-and-mongodb/getting-started)
 ## Requirements
 
 - [Node and npm](https://nodejs.org)
