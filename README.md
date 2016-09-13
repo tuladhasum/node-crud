@@ -17,3 +17,13 @@ These are the foundation of many types of applications.
 - Set the `DB_URI` in `.env`
 - Start the server: `node server.js`
 - View in browser: <http://localhost:8080>
+
+
+## Git Help
+Adding an existing project ot Github using the comman line [Link](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/)
+
+`git remote add origin https://github.com/tuladhasum/node-crud.git
+git push -u origin master`
+
+git remote rm origin
+git remote add origin git@github.com:username/myapp.git

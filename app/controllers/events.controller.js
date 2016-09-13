@@ -48,6 +48,19 @@ function showSingle(req, res) {
   });
 }
 
+// function showSingleSid(req, res){
+//   Event.findOne({ _id: req.params._id}, (err, event) => {
+//     if (err) {
+//       res.status(404);
+//       res.send('Event not found');
+//     }
+//     res.render('pages/single', { 
+//       event: event,
+//       success: req.flash('success')
+//     });
+//   });
+// }
+ 
 /**
  * Seed the database
  */
